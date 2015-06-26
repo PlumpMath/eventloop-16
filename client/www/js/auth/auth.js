@@ -3,7 +3,7 @@
 // in our signup/signin forms using the injected Auth service
 angular.module('starter.auth', ['ngOpenFB'])
 
-.controller('AuthController', function ($scope, $location, ngFB, Auth, Token) {
+.controller('AuthController', function ($scope, $location, OpenFB, Auth, Token) {
   
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -15,32 +15,32 @@ angular.module('starter.auth', ['ngOpenFB'])
   $scope.user = {};
 
   $scope.fbLogin = function () {
-    ngFB.login({scope: 'email,read_stream,publish_actions'}).then(
-        function (response) {
-            if (response.status === 'connected') {
-              console.log('Facebook login succeeded');
-              ngFB.api({
-                  path: '/me',
-                  params: {fields: 'id,email,first_name,last_name'}
-                }).then(
-                  function (user) {
-                    $scope.user = user;
-                    $scope.user._id = user.id;
-                    Auth.signin($scope.user)
-                      .then(function () {
-                        Token.set('userId', user.id);
-                        $location.path('/eventlist');
-                      })
-                      .catch(function (error) {
-                        console.log('Error in calling Auth.signin: ' + error);
-                      });
-                  },
-                  function (error) {
-                    alert('Facebook error: ' + error.error_description);
-                  });
-            } else {
-              alert('Facebook login failed');
-            }
-          });
+    OpenFB.login({scope: 'email,read_stream,publish_actions,user_friends'}).then(
+        function () {
+          if (response.status === 'connected') {
+            console.log('Facebook login succeeded');
+            openFB.api({
+                path: '/me',
+                params: {fields: 'id,email,first_name,last_name'}
+              }).then(
+                function (user) {
+                  $scope.user = user;
+                  $scope.user._id = user.id;
+                  Auth.signin($scope.user)
+                    .then(function () {
+                      Token.set('userId', user.id);
+                      $location.path('/eventlist');
+                    })
+                    .catch(function (error) {
+                      console.log('Error in calling Auth.signin: ' + error);
+                    });
+                },
+                function (error) {
+                  alert('Facebook error: ' + error.error_description);
+                });
+        },
+        function() {
+          alert('OpenFB login failed');
+        });
   };
 });

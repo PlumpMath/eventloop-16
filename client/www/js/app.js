@@ -8,11 +8,12 @@ angular.module('starter', [
   'starter.auth',
   'starter.services',
   'starter.eventlist',
-  'ngOpenFB'
+  'openfb'
 ])
 
-.run(function ($ionicPlatform, ngFB) {
-  ngFB.init({appId: '872642749474074'});
+.run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+  OpenFB.init('872642749474074');
+
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -22,6 +23,17 @@ angular.module('starter', [
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
+  });
+
+  $rootScope.$on('$stateChangeStart', function(event, toState) {
+    if (toState.name !== "#/signin" && toState.name !== "#/logout" && !$window.sessionStorage['fbtoken']) {
+        $state.go('#/signin');
+        event.preventDefault();
+    }
+  });
+
+  $rootScope.$on('OAuthException', function() {
+      $state.go('#/signin');
   });
 })
 
@@ -41,5 +53,5 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/signin');
+  $urlRouterProvider.otherwise('/eventlist');
 });
