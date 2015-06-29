@@ -1,4 +1,4 @@
-angular.module('starter.services', ['ngOpenFB'])
+angular.module('starter.services', [])
 
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
@@ -99,7 +99,7 @@ angular.module('starter.services', ['ngOpenFB'])
         getlongLat : getlongLat
       };
   })
-.factory('Token', function ($window, $location, ngFB) {
+.factory('Token', function ($window, $location) {
   return {
     set: function (key, value) {
       $window.localStorage[key] = value;
