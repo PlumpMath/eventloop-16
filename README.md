@@ -1,6 +1,6 @@
 # Project Name
 
-> A mobile platform that provides up to date information on events based on location.
+> EventLoop: A mobile platform that provides up to date information on events based on location.
 
 ## Team
 
@@ -20,7 +20,9 @@
 
 ## Usage
 
-> Some usage instructionsg
+> Click the Login With Facebook button to sign in using your facebook account
+> On the Eventlist page, view all the events posted by other users around you
+> If you want to post your own event, click the "Create New Event" button, fill in the description, and click "Publish Event"
 
 ## Requirements
 
@@ -39,6 +41,12 @@ From within the root directory:
 
 ```sh
 sudo npm install -g bower
+npm install
+bower install
+```
+
+From within the root/client directory:
+```sh
 npm install
 bower install
 ```

@@ -23,13 +23,14 @@ h1 {
 ion-content {
 	text-align: center;
 	background-color: #cccccc;
-	background-image: url("oldschoolphone.jpg");
+	background-image: url("../img/oldschoolphone.jpg");
 	/*background-color: #6699FF;*/
 	/*color: #FFFFFF;*/
 }
 
 .event {
 	text-align: left;
+	opacity: 0.9;
 }
 
 
@@ -38,6 +39,7 @@ ion-content {
 	border-color: #FF0066;
 	border-width: 1px;
 	font-style: italic;
+	opacity: 0.9;
 }
 
 .eventlist .event:nth-child(odd) {
@@ -51,7 +53,7 @@ ion-content {
 }
 
 .description{
-	#DCC229
+	word-wrap: break-word;
 }
 
 .createevent{
@@ -74,10 +76,13 @@ ion-content {
 
 .username {
 	font-weight: bold;
+	opacity: 1;
 }
 
 .description {
 	margin-left: 5%;
+	white-space: pre-wrap;
+	opacity: 1;
 }
 
 .votes {

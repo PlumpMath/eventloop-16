@@ -17,7 +17,7 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Wat’s Crackin’
+  > EventLoop
 
 ## Sub-Heading ##
   > For those who are interested in finding out about spontaneous/interesting events that are occurring near them. 
@@ -32,13 +32,13 @@ Once the project moves into development, the press release can be used as a touc
   > Users will generate content (text) based on events that they are currently at and be able to share these ‘events’ to a time line. Other users near these locations will see the events on their person time lines and be able to upvote or downvote them which will raise or lower visibility.
 
 ## Quote from You ##
-  > Are you new to the area? Are you just passing by? Well check out Wat’s Crackin’ to find out the most crackin’ parties nearby.  
+  > Are you new to the area? Are you just passing by? Well check out EventLoop to find out what's going on around you.  
 
 ## How to Get Started ##
   > Download the app and login via Facebook.
 
 ## Customer Quote ##
-  > Wat's Crackin’ has completely put me in touch with the community around me, and has been absolutely great in helping me find new and exciting things to do.
+  > EventLoop has completely put me in touch with the community around me, and has been absolutely great in helping me find new and exciting things to do.
 
 ## Closing and Call to Action ##
   > What’s good in the neighborhood! Check out the app and never be at the wrong event again.
