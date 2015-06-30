@@ -21,6 +21,10 @@ angular.module('starter.eventlist', ['angularMoment'])
     $scope.modal.hide();
   };
 
+  $scope.openMap = function() {
+    $location.path('/map');
+  };
+
   $scope.getEvents = function () {
     Events.getEvents().then(function (events) {
       $scope.data.events = events.events;
