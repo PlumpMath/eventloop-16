@@ -1,0 +1,18 @@
+{
+	"name": "client",
+	"app_id": "",
+	"proxies": [
+		{
+			"path": "/api/user",
+			"proxyUrl": "https://aqueous-bayou-7429.herokuapp.com/api/user"
+		},
+		{
+			"path": "/api/events",
+			"proxyUrl": "https://aqueous-bayou-7429.herokuapp.com/api/events"
+		},
+		{
+			"path": "/api/votes",
+			"proxyUrl": "https://aqueous-bayou-7429.herokuapp.com/api/votes"
+		}
+	]
+}
